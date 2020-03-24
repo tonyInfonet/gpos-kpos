@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C20C3D7-3D45-4861-9E6F-2A84F0048433}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InfonetPos.FcsIntegration</RootNamespace>
+    <AssemblyName>InfonetPos.FcsIntegration</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AsyncNet.Core, Version=1.2.4.0, Culture=neutral, PublicKeyToken=3f4900b9c5b8c297, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\AsyncNet.Core.1.2.4\lib\net45\AsyncNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AsyncNet.Tcp, Version=1.2.5.0, Culture=neutral, PublicKeyToken=687dbd8d805f8d7c, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\AsyncNet.Tcp.1.2.5\lib\net45\AsyncNet.Tcp.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross, Version=6.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\MvvmCross.6.2.3\lib\net461\MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Console, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\System.Console.4.3.1\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\System.Threading.Tasks.Dataflow.4.9.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\BasketDetail.cs" />
+    <Compile Include="Entities\BasketRequest.cs" />
+    <Compile Include="Entities\BasketResponse.cs" />
+    <Compile Include="Entities\FcsCommand.cs" />
+    <Compile Include="Entities\FcsEvent.cs" />
+    <Compile Include="Entities\FcsMessageBase.cs" />
+    <Compile Include="Entities\FCSResponse.cs" />
+    <Compile Include="Entities\FcsStatus.cs" />
+    <Compile Include="Entities\Receipt\GetReceiptCriteria.cs" />
+    <Compile Include="Entities\Receipt\GetReceiptDataCriteria.cs" />
+    <Compile Include="Entities\Receipt\GetReceiptDataRequest.cs" />
+    <Compile Include="Entities\Receipt\GetReceiptDataResponse.cs" />
+    <Compile Include="Entities\Receipt\GetReceiptRequest.cs" />
+    <Compile Include="Entities\Receipt\GetReceiptResponse.cs" />
+    <Compile Include="Entities\Receipt\ReceiptInfo.cs" />
+    <Compile Include="Entities\Receipt\ReceiptOrder.cs" />
+    <Compile Include="Entities\Receipt\ReceiptStartInvoiceNumber.cs" />
+    <Compile Include="Entities\Receipt\ReceiptType.cs" />
+    <Compile Include="Entities\Report\GetReportCriteria.cs" />
+    <Compile Include="Entities\Report\GetReportRequest.cs" />
+    <Compile Include="Entities\Report\GetReportResponse.cs" />
+    <Compile Include="Entities\Report\Period.cs" />
+    <Compile Include="Entities\PrepayDetailInBasket.cs" />
+    <Compile Include="Entities\PrepayEvent.cs" />
+    <Compile Include="Entities\PrepayRequest.cs" />
+    <Compile Include="Entities\PrepayResponse.cs" />
+    <Compile Include="Entities\Report\ReportCriteriaSaleType.cs" />
+    <Compile Include="Entities\Report\ReportRequestSaleType.cs" />
+    <Compile Include="Entities\Report\ReportType.cs" />
+    <Compile Include="Entities\SetPrice\PriceChange.cs" />
+    <Compile Include="Entities\SetPrice\PriceChangedEvent.cs" />
+    <Compile Include="Entities\SetPrice\SetPriceRequest.cs" />
+    <Compile Include="Entities\SetPrice\SetPriceResponse.cs" />
+    <Compile Include="Entities\SetPump\SetPumpRequest.cs" />
+    <Compile Include="Entities\SetPump\SetPumpResponse.cs" />
+    <Compile Include="Entities\SignOffTPosRequest.cs" />
+    <Compile Include="Entities\SignOffTPosResponse.cs" />
+    <Compile Include="Entities\SignOnRequest.cs" />
+    <Compile Include="Entities\SignOnResponse.cs" />
+    <Compile Include="Entities\SignOnTPosRequest.cs" />
+    <Compile Include="Entities\SignOnTPosResponse.cs" />
+    <Compile Include="Entities\SiteConfiguration\ConfigurationRequest.cs" />
+    <Compile Include="Entities\SiteConfiguration\ConfigurationResponse.cs" />
+    <Compile Include="Entities\SiteConfiguration\FuelPrice.cs" />
+    <Compile Include="Entities\SiteConfiguration\Grade.cs" />
+    <Compile Include="Entities\SiteConfiguration\PayAtPump.cs" />
+    <Compile Include="Entities\SiteConfiguration\PostPay.cs" />
+    <Compile Include="Entities\SiteConfiguration\Prepay.cs" />
+    <Compile Include="Entities\SiteConfiguration\Price.cs" />
+    <Compile Include="Entities\SiteConfiguration\Pump.cs" />
+    <Compile Include="Entities\SiteConfiguration\PumpTest.cs" />
+    <Compile Include="Enums\BasketRequestType.cs" />
+    <Compile Include="Enums\POSType.cs" />
+    <Compile Include="Enums\PrepayRequestType.cs" />
+    <Compile Include="Enums\SetPumpRequestType.cs" />
+    <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FcsService.cs" />
+    <Compile Include="Services\Interfaces\IFcsService.cs" />
+    <Compile Include="Utilities\FcsMessageDeserializationResult.cs" />
+    <Compile Include="Utilities\FcsMessageSerializer.cs" />
+    <Compile Include="Utilities\XObjectExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

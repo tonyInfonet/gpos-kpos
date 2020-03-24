@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfonetPOS.Core", "InfonetPOS.Core\InfonetPOS.Core.csproj", "{E9630FC1-1440-4DD6-B032-CC53CB6491E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfonetPOS.WPF", "InfonetPOS.WPF\InfonetPOS.WPF.csproj", "{79ED54F1-9C0A-478A-BCF7-F21B54D6FA69}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9630FC1-1440-4DD6-B032-CC53CB6491E3} = {E9630FC1-1440-4DD6-B032-CC53CB6491E3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfonetPos.FcsIntegration", "FcsIntegration\InfonetPos.FcsIntegration\InfonetPos.FcsIntegration.csproj", "{8C20C3D7-3D45-4861-9E6F-2A84F0048433}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9630FC1-1440-4DD6-B032-CC53CB6491E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9630FC1-1440-4DD6-B032-CC53CB6491E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9630FC1-1440-4DD6-B032-CC53CB6491E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9630FC1-1440-4DD6-B032-CC53CB6491E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79ED54F1-9C0A-478A-BCF7-F21B54D6FA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79ED54F1-9C0A-478A-BCF7-F21B54D6FA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79ED54F1-9C0A-478A-BCF7-F21B54D6FA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79ED54F1-9C0A-478A-BCF7-F21B54D6FA69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C20C3D7-3D45-4861-9E6F-2A84F0048433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C20C3D7-3D45-4861-9E6F-2A84F0048433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C20C3D7-3D45-4861-9E6F-2A84F0048433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C20C3D7-3D45-4861-9E6F-2A84F0048433}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31F726DD-AB2B-4AEE-886A-414BB76F9530}
+	EndGlobalSection
+EndGlobal

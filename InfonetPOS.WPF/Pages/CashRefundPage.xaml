@@ -1,0 +1,136 @@
+﻿<mvx:MvxWpfView x:Class="InfonetPOS.WPF.Pages.CashRefundPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+      xmlns:viewModels="clr-namespace:InfonetPOS.Core.ViewModels;assembly=InfonetPOS.Core"
+      x:TypeArguments="viewModels:CashRefundViewModel"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:InfonetPOS.WPF.Pages"
+      xmlns:ext="clr-namespace:InfonetPOS.WPF.MarkupExtensions"
+      xmlns:controls="clr-namespace:InfonetPOS.WPF.Controls" 
+      xmlns:inline="clr-namespace:InfonetPOS.WPF.MarkupExtensions"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      >
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="0"
+                    inline:Spacing.Vertical="10">
+
+            <controls:BilingualText HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextResourceKey="AmountPayable"
+                                    Lang="{Binding Language}">
+
+            </controls:BilingualText>
+
+            <TextBox 
+                IsReadOnly="True"
+                Text="{Binding AmountPayable,
+                    StringFormat=N2}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="200"
+                Height="60"
+                TextAlignment="Center">
+            </TextBox>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1"
+                    inline:Spacing.Vertical="10">
+
+            <controls:BilingualText HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextResourceKey="AmountPaid"
+                                    Lang="{Binding Language}">
+
+            </controls:BilingualText>
+
+            <TextBox 
+                IsReadOnly="True"
+                Text="{Binding AmountPaid,
+                    StringFormat=N2}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="200"
+                Height="60"
+                TextAlignment="Center">
+            </TextBox>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="2"
+                    inline:Spacing.Vertical="10">
+
+            <controls:BilingualText HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextResourceKey="AmountToReturn"
+                                    Lang="{Binding Language}">
+
+            </controls:BilingualText>
+
+            <TextBox 
+                IsReadOnly="True"
+                Text="{Binding AmountToReturn,
+                    StringFormat=N2}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="200"
+                Height="60"
+                TextAlignment="Center">
+            </TextBox>
+
+        </StackPanel>
+
+        <Button Grid.Column="2"
+                Grid.Row="1"
+                Command="{Binding CancelCommand}"
+                Visibility="{Binding Path=CanCancel,
+                    Converter={StaticResource BoolToVis}}"
+                Background="Transparent"
+                Width="150"
+                Height="100">
+            <controls:BilingualText 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                TextResourceKey="Cancel"
+                Foreground="Red"
+                Lang="{Binding Language}"/>
+        </Button>
+
+        <Button Grid.Column="2"
+                Grid.Row="2"
+                Command="{Binding ConfirmCommand}"
+                Background="Transparent"
+                Width="150"
+                Height="100">
+
+            <controls:BilingualText HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextResourceKey="Confirm"
+                                    Lang="{Binding Language}">
+
+            </controls:BilingualText>
+
+        </Button>
+
+    </Grid>
+</mvx:MvxWpfView>

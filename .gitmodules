@@ -1,0 +1,3 @@
+[submodule "FcsIntegration"]
+	path = FcsIntegration
+	url = https://gitlab.com/infonet/fcsintegration.git

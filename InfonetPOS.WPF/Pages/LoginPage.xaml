@@ -1,0 +1,274 @@
+﻿<mvx:MvxWpfView x:Class="InfonetPOS.WPF.Pages.LoginPage"
+                x:Name="This"
+      x:TypeArguments="viewModels:LoginViewModel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:viewModels="clr-namespace:InfonetPOS.Core.ViewModels;assembly=InfonetPOS.Core"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+      xmlns:local="clr-namespace:InfonetPOS.WPF.Pages"
+      xmlns:inline="clr-namespace:InfonetPOS.WPF.MarkupExtensions"
+      xmlns:controls="clr-namespace:InfonetPOS.WPF.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+
+        <!--warning message-->
+        <StackPanel
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Setter
+                        Property="Visibility"
+                        Value="Collapsed"/>
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition 
+                                    Binding="{Binding CanLogin}"
+                                    Value="false"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter
+                                Property="Visibility"
+                                Value="Visible"/>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            
+            <controls:BilingualText
+                Foreground="Red"
+                Lang="{Binding Language}"
+                TextResourceKey="NoPermissionToLogIn"/>
+
+            <controls:BilingualText
+                Margin="0 70 0 0"
+                Foreground="Red"
+                Lang="{Binding Language}"
+                TextResourceKey="ContactDealer"/>
+        </StackPanel>
+        
+        <!--login-->
+        <Grid
+            Visibility="{Binding CanLogin,
+                Converter={StaticResource BoolToVis}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--user-->
+            <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    >
+
+                <controls:BilingualText      HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         Lang="{Binding Language}"        
+                                         TextResourceKey="UserName">
+
+                </controls:BilingualText>
+
+                <ComboBox 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   SelectedItem="{Binding SelectedUser}"
+                   ItemsSource="{Binding SelectableUsers}"
+                   Width="400"
+                   SelectionChanged="UserSelection_Changed"
+                   MaxDropDownHeight="300">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+            </StackPanel>
+
+            <!--password-->
+            <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Margin="0,10,0,0"
+                    >
+
+                <controls:BilingualText      HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         Lang="{Binding Language}"        
+                                         TextResourceKey="Password">
+
+                </controls:BilingualText>
+                
+                <PasswordBox 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   x:Name="UserPassword"
+                   PasswordChar="*"
+                   Height="40"
+                   
+                   Width="400"/>
+
+
+
+            </StackPanel>
+
+            <!--shift-->
+            <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Margin="0,10,0,0"
+                    >
+
+                <!--label-->
+                <controls:BilingualText     
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Lang="{Binding Language}"        
+                                    TextResourceKey="Shift">
+
+                </controls:BilingualText>
+
+                <!--auto selected shift-->
+                <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="32"
+                Text="{Binding SelectedShiftStr}">
+
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ShouldOpenNewTill}"
+                                               Value="false"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+
+                </TextBlock>
+
+                <!--selection-->
+                <ComboBox
+                Visibility="{Binding ShouldOpenNewTill,
+                    Converter={StaticResource BoolToVis}}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                SelectedItem="{Binding SelectedShift}"
+                ItemsSource="{Binding SelectableShifts}"
+                Width="400"
+                MaxDropDownHeight="300">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+            </StackPanel>
+
+            <!--till-->
+            <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    Margin="0,10,0,0"
+                    >
+
+                <!--label-->
+                <controls:BilingualText     
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Lang="{Binding Language}"        
+                                    TextResourceKey="Till">
+
+                </controls:BilingualText>
+
+                <!--auto selected till-->
+                <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="32"
+                Text="{Binding SelectedTill.TillNo}">
+
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ShouldOpenNewTill}"
+                                               Value="false"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+
+                </TextBlock>
+
+                <!--selection-->
+                <ComboBox 
+                Visibility="{Binding ShouldOpenNewTill,
+                    Converter={StaticResource BoolToVis}}"   
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                SelectedValuePath="TillNo"
+                SelectedItem="{Binding SelectedTill}"
+                SelectedValue="{Binding SelectedTill.TillNo}"
+                ItemsSource="{Binding SelectableTills}"
+                Width="400"
+                MaxDropDownHeight="300">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding TillNo}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+            </StackPanel>
+
+            <Button 
+                Grid.Column="2"
+                Grid.Row="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                Width="200"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=This}"
+                >
+
+                <controls:BilingualText Lang="{Binding Language}"
+                                    TextResourceKey="Login">
+
+                </controls:BilingualText>
+
+            </Button>
+        </Grid>
+
+    </Grid>
+
+</mvx:MvxWpfView>

@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FuelServerNotAvailable" xml:space="preserve">
+    <value>Fuel Server Not Available</value>
+  </data>
+  <data name="PaymentSolutionNotAvailable" xml:space="preserve">
+    <value>Payment Solution Not Available</value>
+  </data>
+  <data name="Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="Till" xml:space="preserve">
+    <value>Till</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="FuelGrade" xml:space="preserve">
+    <value>Fuel Grade</value>
+  </data>
+  <data name="GotoToPump" xml:space="preserve">
+    <value>GO TO PUMP {0} AND LIFT NOZZLE TO BEGIN FUELING</value>
+  </data>
+  <data name="PaymentApproved" xml:space="preserve">
+    <value>PAYMENT APPROVED</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>Payment Method</value>
+  </data>
+  <data name="PaymentNotApproved" xml:space="preserve">
+    <value>PAYMENT NOT APPROVED</value>
+  </data>
+  <data name="PrepayForPump" xml:space="preserve">
+    <value>Prepay for pump: {0}</value>
+  </data>
+  <data name="PrintingReceipt" xml:space="preserve">
+    <value>Printing Receipt...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>PROCESSING….</value>
+  </data>
+  <data name="ToProcessPayment" xml:space="preserve">
+    <value>TO PROCESS PAYMENT</value>
+  </data>
+  <data name="UsePaymentTerminal" xml:space="preserve">
+    <value>PLEASE USE PAYMENT TERMINAL</value>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>REFUND</value>
+  </data>
+  <data name="CantAuthorizePump" xml:space="preserve">
+    <value>CAN NOT AUTHORIZE PUMP</value>
+  </data>
+  <data name="PartialPumping" xml:space="preserve">
+    <value>PARTIALLY PUMPED</value>
+  </data>
+  <data name="CalculateAmount" xml:space="preserve">
+    <value>Calculate Amount</value>
+  </data>
+  <data name="ConvertedAmount" xml:space="preserve">
+    <value>Converted Amount</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>Exchange Rate</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="SelectPaymentMethod" xml:space="preserve">
+    <value>Select Payment Method</value>
+  </data>
+  <data name="SelectRefundMethod" xml:space="preserve">
+    <value>Select Refund Method</value>
+  </data>
+  <data name="RefundApproved" xml:space="preserve">
+    <value>Refund Approved</value>
+  </data>
+  <data name="RefundNotApproved" xml:space="preserve">
+    <value>Refund Not Approved</value>
+  </data>
+  <data name="AmountPaid" xml:space="preserve">
+    <value>Amount Paid</value>
+  </data>
+  <data name="AmountPayable" xml:space="preserve">
+    <value>Amount Payable</value>
+  </data>
+  <data name="AmountToReturn" xml:space="preserve">
+    <value>Amount To Return</value>
+  </data>
+  <data name="PrepayRemoved" xml:space="preserve">
+    <value>PREPAY HAS BEEN REMOVED</value>
+  </data>
+  <data name="EOD" xml:space="preserve">
+    <value>EOD Report</value>
+  </data>
+  <data name="EODDetail" xml:space="preserve">
+    <value>Detailed EOD Report</value>
+  </data>
+  <data name="GasPriceChange" xml:space="preserve">
+    <value>Gas Price Change Report</value>
+  </data>
+  <data name="HourlyGasSales" xml:space="preserve">
+    <value>Gas Sales Hourly Report</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ShowReport" xml:space="preserve">
+    <value>Show Report</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="PrintReport" xml:space="preserve">
+    <value>Print Report</value>
+  </data>
+  <data name="PrintingReport" xml:space="preserve">
+    <value>Printing Report</value>
+  </data>
+  <data name="CloseTill" xml:space="preserve">
+    <value>Do you want to close the till?</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>LOGOUT</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Pump" xml:space="preserve">
+    <value>Pump</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="Prepay" xml:space="preserve">
+    <value>Prepay</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="ReprintReceipt" xml:space="preserve">
+    <value>Reprint Receipt</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="NextDay" xml:space="preserve">
+    <value>Next Day</value>
+  </data>
+  <data name="PreviousDay" xml:space="preserve">
+    <value>Previous Day</value>
+  </data>
+  <data name="ReceiptsFor" xml:space="preserve">
+    <value>Receipts For {0}</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="SetAmount" xml:space="preserve">
+    <value>SET AMOUNT</value>
+  </data>
+  <data name="CurrentSales" xml:space="preserve">
+    <value>Current Sales </value>
+  </data>
+  <data name="RefundMethod" xml:space="preserve">
+    <value>Refund Method</value>
+  </data>
+  <data name="StartAll" xml:space="preserve">
+    <value>Start All Pumps</value>
+  </data>
+  <data name="StopAll" xml:space="preserve">
+    <value>Stop All Pumps</value>
+  </data>
+  <data name="DriveOff" xml:space="preserve">
+    <value>Drive Off</value>
+  </data>
+  <data name="DriveOffMessage" xml:space="preserve">
+    <value>Complete As Drive Off?</value>
+  </data>
+  <data name="WantToStartPumps" xml:space="preserve">
+    <value>Do You Want To Start All Pumps?</value>
+  </data>
+  <data name="WantToStopPumps" xml:space="preserve">
+    <value>Do You Want TO Stop All Pumps?</value>
+  </data>
+  <data name="FuelPriceChange" xml:space="preserve">
+    <value>Fuel Price Change</value>
+  </data>
+  <data name="CurrentPrice" xml:space="preserve">
+    <value>Current Price</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="NewPrice" xml:space="preserve">
+    <value>New Price</value>
+  </data>
+  <data name="Set" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="PumpTest" xml:space="preserve">
+    <value>Pump Test</value>
+  </data>
+  <data name="PumpTestMessage" xml:space="preserve">
+    <value>Complete As Pump Test?</value>
+  </data>
+  <data name="AuthorizeForPumpTest" xml:space="preserve">
+    <value>Authorize for pump test</value>
+  </data>
+  <data name="WantToAuthorizeForPumpTest" xml:space="preserve">
+    <value>Do you want to authorize for pump test?</value>
+  </data>
+  <data name="ContactDealer" xml:space="preserve">
+    <value>PLEASE CONTACT YOUR DEALER</value>
+  </data>
+  <data name="NoPermissionToLogIn" xml:space="preserve">
+    <value>YOU DON’T HAVE PERMISSION TO LOGIN TO POS</value>
+  </data>
+  <data name="ReceiptType" xml:space="preserve">
+    <value>Receipt Type</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="CantCloseApp" xml:space="preserve">
+    <value>You are in the middle of a transaction. Please complete or cancel the transaction before you close the application.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>DateTime</value>
+  </data>
+  <data name="ConnectionLoseWhileLogin" xml:space="preserve">
+    <value>Connection to Back office/FCS lost. Please check your network/WIFI connection. Do you want to try again?</value>
+  </data>
+  <data name="ConnectionLoseWhileLogout" xml:space="preserve">
+    <value>Connection to Back office/FCS lost, please ensure your network/WIFI connection is ok and try again.</value>
+  </data>
+  <data name="CancelHoldBasketError" xml:space="preserve">
+    <value>Basket hold can't be cancelled.Try again after sometimes.</value>
+  </data>
+  <data name="RefundNotApprovedForPrepayRefund" xml:space="preserve">
+    <value>Refund Not approved.Please contact with cashier.</value>
+  </data>
+  <data name="CantAuthorizePostPay" xml:space="preserve">
+    <value>Cant Authorize pump for postpay. Try Again after somethimes.</value>
+  </data>
+  <data name="CantStartPump" xml:space="preserve">
+    <value>Can't start pump.Please Try Again After sometimes.</value>
+  </data>
+  <data name="CantStopPump" xml:space="preserve">
+    <value>Can't stop pump.Please Try Again After sometimes.</value>
+  </data>
+  <data name="PrepayHoldError" xml:space="preserve">
+    <value>PrepayHold Error Occurred.Try Again after sometimes.</value>
+  </data>
+  <data name="BasketHoldError" xml:space="preserve">
+    <value>Can't Hold Basket.Try again after sometimes.</value>
+  </data>
+  <data name="CantSetPrice" xml:space="preserve">
+    <value>Can't set price. Try again after sometimes.</value>
+  </data>
+  <data name="CantStartAllPump" xml:space="preserve">
+    <value>Can't Start all pump.Try Again after sometimes.</value>
+  </data>
+  <data name="CantStopAllPump" xml:space="preserve">
+    <value>Can't Stop all pump.Try again after sometimes.</value>
+  </data>
+  <data name="CantSwitchPrepay" xml:space="preserve">
+    <value>Can't Switch prepay.Try again after sometimes.</value>
+  </data>
+  <data name="PrepayCancelHoldRemoveError" xml:space="preserve">
+    <value>Prepay cancel hold remove error occurred.Try again after sometimes.</value>
+  </data>
+  <data name="PrepayHoldRemoveError" xml:space="preserve">
+    <value>Prepay Hold Remove error occurred. Try again.</value>
+  </data>
+  <data name="CantAuthorizeForPumpTest" xml:space="preserve">
+    <value>Can't  Authorize for pump test.Please try again.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Please enter password to login.</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Password is incorrect.</value>
+  </data>
+</root>

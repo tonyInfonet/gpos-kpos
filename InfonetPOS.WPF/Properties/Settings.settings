@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InfonetPOS.WPF.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PosId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="TpsIpAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="TpsPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8888</Value>
+    </Setting>
+    <Setting Name="StoreName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ABC GAS BAR</Value>
+    </Setting>
+    <Setting Name="DefaultAmount" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="PrinterFont" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Courier</Value>
+    </Setting>
+    <Setting Name="PrinterFontSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="Version" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">InfonetPos1.0</Value>
+    </Setting>
+    <Setting Name="TimerInterval" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="ReportReceiptFontSize" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="FcsIpAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.1.86</Value>
+    </Setting>
+    <Setting Name="FcsPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10012</Value>
+    </Setting>
+    <Setting Name="PumpIds" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1,2,3,4</Value>
+    </Setting>
+    <Setting Name="PosType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">KPOS</Value>
+    </Setting>
+    <Setting Name="ReportReceiptFont" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Courier New</Value>
+    </Setting>
+    <Setting Name="CanChangeLanguageAlways" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DefaultLanguage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">multi</Value>
+    </Setting>
+    <Setting Name="FuelUnitPriceDecimal" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">N2</Value>
+    </Setting>
+    <Setting Name="NoOfReceiptsToShow" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="DelayForTPSResponse" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

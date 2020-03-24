@@ -1,0 +1,64 @@
+﻿<views:MvxWpfView
+    xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+    x:Class="InfonetPOS.WPF.Pages.LogoutPage"
+    x:TypeArguments="viewModels:LogoutViewModel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:viewModels="clr-namespace:InfonetPOS.Core.ViewModels;assembly=InfonetPOS.Core"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:InfonetPOS.WPF.Pages"
+    xmlns:controls="clr-namespace:InfonetPOS.WPF.Controls"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+
+            <controls:BilingualText
+                Lang="{Binding Language}"
+                TextResourceKey="Logout"
+                Margin="0 0 0 40"
+                />
+
+            <controls:BilingualText
+                Lang="{Binding Language}"
+                TextResourceKey="CloseTill"
+                />
+
+            <StackPanel
+                Margin="0 20 0 0"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                >
+
+                <Button
+                    Width="200"
+                    Margin="5 0"
+                    Background="Transparent"
+                    Command="{Binding ConfirmTillCloseCmd}"
+                    >
+                    <controls:BilingualText
+                        Lang="{Binding Language}"
+                        TextResourceKey="Yes"/>
+                </Button>
+                
+                <Button
+                    Width="200"
+                    Margin="5 0"
+                    Background="Transparent"
+                    Command="{Binding CancelTillCloseCmd}"
+                    >
+                    <controls:BilingualText
+                        Lang="{Binding Language}"
+                        TextResourceKey="No"
+                        Foreground="Red"/>
+                </Button>
+                
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</views:MvxWpfView>

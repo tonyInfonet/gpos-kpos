@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FuelServerNotAvailable" xml:space="preserve">
+    <value>خادم الوقود غير متوفر</value>
+  </data>
+  <data name="PaymentSolutionNotAvailable" xml:space="preserve">
+    <value>حل الدفع غير متوفر</value>
+  </data>
+  <data name="Shift" xml:space="preserve">
+    <value>وردية العمل</value>
+  </data>
+  <data name="Till" xml:space="preserve">
+    <value>المحفظة</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>إسم المستخدم</value>
+  </data>
+  <data name="FuelGrade" xml:space="preserve">
+    <value>نوع الوقود</value>
+  </data>
+  <data name="GotoToPump" xml:space="preserve">
+    <value>انتقل إلى المضخة {0} و  إرفع الفوهة للتزود بالوقود </value>
+  </data>
+  <data name="PaymentApproved" xml:space="preserve">
+    <value>تم إعتماد الدفع</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>طريقة الدفع</value>
+  </data>
+  <data name="PaymentNotApproved" xml:space="preserve">
+    <value>الدفع غير معتمد</value>
+  </data>
+  <data name="PrepayForPump" xml:space="preserve">
+    <value>الدفع المسبق للمضخة: {0}</value>
+  </data>
+  <data name="PrintingReceipt" xml:space="preserve">
+    <value>إيصال الطباعة ...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>...معالجة</value>
+  </data>
+  <data name="ToProcessPayment" xml:space="preserve">
+    <value>لعملية الدفع</value>
+  </data>
+  <data name="UsePaymentTerminal" xml:space="preserve">
+    <value>يرجى استخدام الدفع النهائي</value>
+  </data>
+  <data name="Refund" xml:space="preserve">
+    <value>إعادة مال</value>
+  </data>
+  <data name="CantAuthorizePump" xml:space="preserve">
+    <value>لا يمكن تفويض مضخة</value>
+  </data>
+  <data name="PartialPumping" xml:space="preserve">
+    <value>مضغوط جزئيا</value>
+  </data>
+  <data name="CalculateAmount" xml:space="preserve">
+    <value>حساب المبلغ</value>
+  </data>
+  <data name="ConvertedAmount" xml:space="preserve">
+    <value>المبلغ بعد تحويل العملة</value>
+  </data>
+  <data name="ExchangeRate" xml:space="preserve">
+    <value>سعر الصرف</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="SelectPaymentMethod" xml:space="preserve">
+    <value>إختيار طريقة الدفع</value>
+  </data>
+  <data name="SelectRefundMethod" xml:space="preserve">
+    <value>إختار طريقة الإسترداد</value>
+  </data>
+  <data name="RefundApproved" xml:space="preserve">
+    <value>تم إعتماد الإسترجاع</value>
+  </data>
+  <data name="RefundNotApproved" xml:space="preserve">
+    <value>برد غير معتمد</value>
+  </data>
+  <data name="AmountPaid" xml:space="preserve">
+    <value>المبلغ المدفوع</value>
+  </data>
+  <data name="AmountPayable" xml:space="preserve">
+    <value>المبلغ المراد دفعة</value>
+  </data>
+  <data name="AmountToReturn" xml:space="preserve">
+    <value>المبلغ المسترجع</value>
+  </data>
+  <data name="PrepayRemoved" xml:space="preserve">
+    <value>تم إزالة نظام الدفع المسبق</value>
+  </data>
+  <data name="EOD" xml:space="preserve">
+    <value>تقرير نهاية اليوم</value>
+  </data>
+  <data name="EODDetail" xml:space="preserve">
+    <value>تقرير مفصل لنهاية اليوم</value>
+  </data>
+  <data name="GasPriceChange" xml:space="preserve">
+    <value>تقرير تغيير سعر الوقود</value>
+  </data>
+  <data name="HourlyGasSales" xml:space="preserve">
+    <value>تقرير مبيعات الوقود لكل ساعة</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>التقارير</value>
+  </data>
+  <data name="ShowReport" xml:space="preserve">
+    <value>عرض تقرير</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>تاريخ البدء</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>تاريخ الانتهاء</value>
+  </data>
+  <data name="PrintReport" xml:space="preserve">
+    <value>اطبع تقرير</value>
+  </data>
+  <data name="PrintingReport" xml:space="preserve">
+    <value>تقرير الطباعة</value>
+  </data>
+  <data name="CloseTill" xml:space="preserve">
+    <value>هل تريد إغلاق حتى؟</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>الخروج من النظام</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>المتبقي</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>دفع</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>السعر</value>
+  </data>
+  <data name="Pump" xml:space="preserve">
+    <value>مضخة</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>مجموع</value>
+  </data>
+  <data name="Volume" xml:space="preserve">
+    <value>الكمية</value>
+  </data>
+  <data name="Prepay" xml:space="preserve">
+    <value>الدفع المسبق</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>نعم فعلا</value>
+  </data>
+  <data name="ReprintReceipt" xml:space="preserve">
+    <value>إعادة طبع الإيصال</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>طباعة</value>
+  </data>
+  <data name="NextDay" xml:space="preserve">
+    <value>اليوم التالي</value>
+  </data>
+  <data name="PreviousDay" xml:space="preserve">
+    <value>اليوم السابق</value>
+  </data>
+  <data name="ReceiptsFor" xml:space="preserve">
+    <value>{0}  إيصالات ل</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>لدخول للنظام</value>
+  </data>
+  <data name="SetAmount" xml:space="preserve">
+    <value>ادخل المبلغ</value>
+  </data>
+  <data name="CurrentSales" xml:space="preserve">
+    <value>المبيعات الحالية</value>
+  </data>
+  <data name="RefundMethod" xml:space="preserve">
+    <value>طريقة استرداد</value>
+  </data>
+  <data name="StartAll" xml:space="preserve">
+    <value>بدء جميع المضخات</value>
+  </data>
+  <data name="StopAll" xml:space="preserve">
+    <value>وقف جميع المضخات</value>
+  </data>
+  <data name="DriveOff" xml:space="preserve">
+    <value>طرد قبالة</value>
+  </data>
+  <data name="DriveOffMessage" xml:space="preserve">
+    <value>أكمل طرد؟</value>
+  </data>
+  <data name="WantToStartPumps" xml:space="preserve">
+    <value>هل تريد أن تبدأ جميع المضخات</value>
+  </data>
+  <data name="WantToStopPumps" xml:space="preserve">
+    <value>هل تريد وقف جميع المضخات</value>
+  </data>
+  <data name="FuelPriceChange" xml:space="preserve">
+    <value>تغيير سعر الوقود</value>
+  </data>
+  <data name="CurrentPrice" xml:space="preserve">
+    <value>السعر الحالي</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="NewPrice" xml:space="preserve">
+    <value>سعر جديد</value>
+  </data>
+  <data name="Set" xml:space="preserve">
+    <value>جلس</value>
+  </data>
+  <data name="PumpTest" xml:space="preserve">
+    <value>اختبار مضخة</value>
+  </data>
+  <data name="PumpTestMessage" xml:space="preserve">
+    <value>أكمل اختبار مضخة؟</value>
+  </data>
+  <data name="AuthorizeForPumpTest" xml:space="preserve">
+    <value>إذن لاختبار المضخة</value>
+  </data>
+  <data name="WantToAuthorizeForPumpTest" xml:space="preserve">
+    <value>هل تريد التفويض لاختبار المضخة؟</value>
+  </data>
+  <data name="ContactDealer" xml:space="preserve">
+    <value>يرجى الاتصال تاجر الخاص بك</value>
+  </data>
+  <data name="NoPermissionToLogIn" xml:space="preserve">
+    <value>أنت لا تملك إذنًا لتسجيل الدخول إلى نقاط البيع</value>
+  </data>
+  <data name="ReceiptType" xml:space="preserve">
+    <value>نوع الإيصال</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاريخ</value>
+  </data>
+  <data name="CantCloseApp" xml:space="preserve">
+    <value>أنت في منتصف الصفقة. يرجى إكمال أو إلغاء المعاملة قبل إغلاق التطبيق.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>التالى</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>فاتورة</value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>تاريخ الوقت</value>
+  </data>
+  <data name="ConnectionLoseWhileLogin" xml:space="preserve">
+    <value>اتصال إلى المكتب الخلفي. يرجى التحقق من اتصال الشبكة / واي فاي الخاص بك. هل تريد اعادة المحاولة؟</value>
+  </data>
+  <data name="ConnectionLoseWhileLogout" xml:space="preserve">
+    <value>الاتصال بالمكتب الخلفي ، يرجى التأكد من اتصال الشبكة الخاص بك على ما يرام والمحاولة مرة أخرى.</value>
+  </data>
+  <data name="CancelHoldBasketError" xml:space="preserve">
+    <value>سلة سلة لا يمكن إلغاؤها. حاول مرة أخرى بعد في بعض الأحيان.</value>
+  </data>
+  <data name="RefundNotApprovedForPrepayRefund" xml:space="preserve">
+    <value>برد لم تتم الموافقة. يرجى الاتصال مع أمين الصندوق.</value>
+  </data>
+  <data name="CantAuthorizePostPay" xml:space="preserve">
+    <value>لا يمكن تفويض المضخة للدفع الآجل. حاول مرة أخرى بعد بعض الأحيان.</value>
+  </data>
+  <data name="CantStartPump" xml:space="preserve">
+    <value>لا يمكن أن تبدأ مضخة. يرجى المحاولة مرة أخرى بعد بعض الأحيان.</value>
+  </data>
+  <data name="CantStopPump" xml:space="preserve">
+    <value>لا يمكن أن تتوقف مضخة. يرجى المحاولة مرة أخرى بعد في بعض الأحيان.</value>
+  </data>
+  <data name="PrepayHoldError" xml:space="preserve">
+    <value>حدث خطأ الدفع المسبق. حاول مرة أخرى بعد بعض الأحيان.</value>
+  </data>
+  <data name="BasketHoldError" xml:space="preserve">
+    <value>لا يمكن أن تعقد سلة. حاول مرة أخرى بعد في بعض الأحيان.</value>
+  </data>
+  <data name="CantSetPrice" xml:space="preserve">
+    <value>لا يمكن تحديد السعر. حاول مرة أخرى بعد بعض الأحيان.</value>
+  </data>
+  <data name="CantStartAllPump" xml:space="preserve">
+    <value>لا يمكن بدء جميع المضخات. حاول مرة أخرى بعد بعض الأحيان.</value>
+  </data>
+  <data name="CantStopAllPump" xml:space="preserve">
+    <value>لا يمكن إيقاف جميع المضخات. حاول مرة أخرى بعد بعض الأحيان.</value>
+  </data>
+  <data name="CantSwitchPrepay" xml:space="preserve">
+    <value>لا يمكن تبديل الدفع المسبق. حاول مرة أخرى بعد بعض الأحيان.</value>
+  </data>
+  <data name="PrepayCancelHoldRemoveError" xml:space="preserve">
+    <value>الدفع المسبق لإلغاء الحجز حدث خطأ الإزالة. حاول مرة أخرى بعد أحيانًا.</value>
+  </data>
+  <data name="PrepayHoldRemoveError" xml:space="preserve">
+    <value>حدث الدفع المسبق إزالة حدث خطأ. حاول مجددا.</value>
+  </data>
+  <data name="CantAuthorizeForPumpTest" xml:space="preserve">
+    <value>لا يمكن التصريح لاختبار المضخة. يرجى المحاولة مرة أخرى.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمه السر</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>الرجاء إدخال كلمة المرور لتسجيل الدخول.</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>كلمة المرور غير صحيحة.</value>
+  </data>
+</root>

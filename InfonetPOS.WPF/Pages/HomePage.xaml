@@ -1,0 +1,566 @@
+﻿<views:MvxWpfView
+    xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+    x:Class="InfonetPOS.WPF.Pages.HomePage"
+    x:TypeArguments="viewModels:HomeViewModel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:viewModels="clr-namespace:InfonetPOS.Core.ViewModels;assembly=InfonetPOS.Core"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:InfonetPOS.WPF.Pages"
+    xmlns:mex ="clr-namespace:InfonetPOS.WPF.MarkupExtensions"
+    xmlns:controls="clr-namespace:InfonetPOS.WPF.Controls"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <DockPanel>
+
+            <!--bottom bar-->
+            <DockPanel
+                LastChildFill="False"
+                Width="Auto"
+                DockPanel.Dock="Bottom">
+                <Button 
+                    DockPanel.Dock="Right"
+                    Width="250"
+                    Height="100"
+                    Margin="5 5"
+                    Padding="10 5"
+                    Background="Transparent"
+                    Command="{Binding LogoutCmd}">
+
+                    <controls:BilingualText
+                        Lang="{Binding Language}"
+                        TextResourceKey="Logout"
+                        Foreground="Red"/>
+
+                </Button>
+            </DockPanel>
+
+            <!--content-->
+            <DockPanel
+                DockPanel.Dock="Top"
+                Visibility="{Binding IsFcsConnected,
+                    Converter={StaticResource BoolToVis}}">
+
+                <!--report and receipt-->
+                <StackPanel
+                    Visibility="{Binding IsKPOS,
+                        Converter={StaticResource BoolToVis}}"
+                    DockPanel.Dock="Right"
+                    Margin="10 10"
+                    Width="280">
+
+                    <!--start all pumps button-->
+                    <Button
+                        Padding="0 2"
+                        Background="#1c3b24"
+                        Foreground="White"
+                        Command="{Binding StartAllPumpsCommand}">
+                        <controls:BilingualText
+                            Lang="{Binding Language}"
+                            TextResourceKey="StartAll"/>
+                    </Button>
+
+                    <!--stop all pumps button-->
+                    <Button 
+                        Margin="0 2 0 0"
+                        Padding="0 2"
+                        Background="#591616"
+                        Foreground="White"
+                        Command="{Binding StopAllPumpsCommand}">
+                        <controls:BilingualText 
+                            Lang="{Binding Language}"
+                            TextResourceKey="StopAll"/>
+                    </Button>
+
+                    <!--reports button-->
+                    <ToggleButton 
+                        Name="ReportButton">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Border
+                                    Margin="0 40 0 0"
+                                    Padding="0 2"
+                                    BorderBrush="Black"
+                                    BorderThickness="1"
+                                    Background="LightGray">
+                                    <controls:BilingualText
+                                        Lang="{Binding Language}"
+                                        TextResourceKey="Reports"/>
+                                </Border>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                    <Popup 
+                        IsOpen="{Binding IsChecked, ElementName=ReportButton}" 
+                        StaysOpen="False"
+                        Placement="Bottom"
+                        PlacementTarget="{Binding ElementName=ReportButton}"
+                        Width="550">
+                        <StackPanel>
+
+                            <Button Command="{Binding ShowReportCommand}"
+                                CommandParameter="EOD">
+                                <controls:BilingualText 
+                                    Lang="{Binding Language}"
+                                    TextResourceKey="EOD"/>
+                            </Button>
+
+                            <Button 
+                                Command="{Binding ShowReportCommand}"
+                                CommandParameter="EODDetail">
+                                <controls:BilingualText 
+                                    Lang="{Binding Language}"
+                                    TextResourceKey="EODDetail"/>
+                            </Button>
+
+                            <Button 
+                                Command="{Binding ShowReportCommand}"
+                                CommandParameter="HourlyGasSales">
+                                <controls:BilingualText 
+                                    Lang="{Binding Language}"
+                                    TextResourceKey="HourlyGasSales"/>
+                            </Button>
+
+                            <Button 
+                                Command="{Binding ShowReportCommand}"
+                                CommandParameter="GasPriceChange">
+                                <controls:BilingualText 
+                                    Lang="{Binding Language}"
+                                    TextResourceKey="GasPriceChange"/>
+                            </Button>
+
+                            <Button 
+                                Command="{Binding ShowReportCommand}"
+                                CommandParameter="CurrentSales">
+                                <controls:BilingualText 
+                                    Lang="{Binding Language}"
+                                    TextResourceKey="CurrentSales"/>
+                            </Button>
+
+                        </StackPanel>
+
+                    </Popup>
+
+                    <!--ReprintReceipt button-->
+                    <Button 
+                        Margin="0 2 0 0"
+                        Padding="0 2"
+                        Background="LightGray"
+                        Command="{Binding ReprintReceiptCommand}">
+                        <controls:BilingualText 
+                            Lang="{Binding Language}"
+                            TextResourceKey="ReprintReceipt"/>
+                    </Button>
+
+                    <!--fuel price change-->
+                    <Button
+                        Margin="0 2 0 0"
+                        Padding="0 2"
+                        Background="LightGray"
+                        Command="{Binding FuelPriceChangeCmd}">
+                        <controls:BilingualText
+                            Lang="{Binding Language}"
+                            TextResourceKey="FuelPriceChange"/>
+                    </Button>
+                </StackPanel>
+
+                <!--pumps-->
+                <ScrollViewer 
+                DockPanel.Dock="Right"
+                VerticalScrollBarVisibility="Auto"
+                    Padding="10 10">
+                    <ScrollViewer.Resources>
+                        <sys:Double 
+                    x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">
+                            50
+                        </sys:Double>
+                    </ScrollViewer.Resources>
+
+                    <ItemsControl 
+            Name="PumpControl" 
+            ItemsSource="{Binding Pumps}" 
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left">
+
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel
+                            Height="200">
+                                    <Border
+                                BorderBrush="Black"
+                                BorderThickness="1">
+                                        <StackPanel
+                                    Width="100">
+                                            <!--main pump button-->
+                                            <ToggleButton Name="PumpButton">
+                                                <ToggleButton.Template>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Border
+                                                    BorderBrush="Black"
+                                                    BorderThickness="1">
+                                                            <StackPanel    
+                                                    Height="100">
+                                                                <DockPanel
+                                                            Margin="5 5">
+                                                                    <DockPanel 
+                                                            DockPanel.Dock="Top">
+                                                                        <TextBlock 
+                                                                FontSize="25" 
+                                                                DockPanel.Dock="Left"
+                                                                Text="{Binding Id}"/>
+                                                                        <Image 
+                                                                Width="30" 
+                                                                Height="30" 
+                                                                DockPanel.Dock="Right"
+                                                                Source="/Images/pump.png"/>
+                                                                    </DockPanel>
+                                                                    <TextBlock 
+                                                                FontSize="15" 
+                                                                FontWeight="Bold"
+                                                                DockPanel.Dock="Bottom" 
+                                                                Text="{Binding Status}"/>
+                                                                    <TextBlock FontSize="15" 
+                                                                DockPanel.Dock="Bottom" 
+                                                                Text="{Binding PrepayStatusStr}"/>
+                                                                    <StackPanel
+                                                                        Visibility="{Binding ShouldShowPrepayAmount,
+                                                                            Converter={StaticResource BoolToVis}}"
+                                                                        Orientation="Horizontal"
+                                                                        DockPanel.Dock="Bottom">
+                                                                        <TextBlock 
+                                                                            FontSize="15"
+                                                                            Text="$"/>
+                                                                        <TextBlock 
+                                                                            FontSize="15" 
+                                                                            Text="{Binding PrepayAmount,
+                                                                                StringFormat=N2}"/>
+                                                                    </StackPanel>
+                                                                </DockPanel>
+
+                                                                <StackPanel.Style>
+                                                                    <Style TargetType="StackPanel">
+                                                                        <Setter 
+                                                                Property="Background" 
+                                                                Value="LightGray" />
+                                                                        <Setter
+                                                                Property="TextBlock.Foreground"
+                                                                Value="White"/>
+                                                                        <Style.Triggers>
+                                                                            <!--cancel switch flash-->
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding CanCancelPrepaySwitch}" Value="true" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <MultiDataTrigger.EnterActions>
+                                                                                    <BeginStoryboard x:Name="CancelSwitchColor">
+                                                                                        <Storyboard>
+                                                                                            <ColorAnimationUsingKeyFrames
+                                                                                        Storyboard.TargetProperty="(Background).Color"
+                                                                                        Duration="0:0:1"
+                                                                                        RepeatBehavior="Forever">
+                                                                                                <DiscreteColorKeyFrame
+                                                                                            Value="#fcf27e"
+                                                                                            KeyTime="0:0:0"/>
+                                                                                                <!--yellow-->
+                                                                                                <DiscreteColorKeyFrame
+                                                                                            Value="LightGray"
+                                                                                            KeyTime="0:0:0.5"/>
+                                                                                            </ColorAnimationUsingKeyFrames>
+                                                                                        </Storyboard>
+                                                                                    </BeginStoryboard>
+                                                                                </MultiDataTrigger.EnterActions>
+                                                                                <MultiDataTrigger.ExitActions>
+                                                                                    <RemoveStoryboard BeginStoryboardName="CancelSwitchColor"/>
+                                                                                </MultiDataTrigger.ExitActions>
+                                                                            </MultiDataTrigger>
+
+                                                                            <!--confirm switch flash-->
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding CanConfirmPrepaySwitch}" Value="true" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <MultiDataTrigger.EnterActions>
+                                                                                    <BeginStoryboard x:Name="ConfirmSwitchColor">
+                                                                                        <Storyboard>
+                                                                                            <ColorAnimationUsingKeyFrames
+                                                                                        Storyboard.TargetProperty="(Background).Color"
+                                                                                        Duration="0:0:1"
+                                                                                        RepeatBehavior="Forever">
+                                                                                                <DiscreteColorKeyFrame
+                                                                                            Value="#aefc7e"
+                                                                                            KeyTime="0:0:0"/>
+                                                                                                <!--green-->
+                                                                                                <DiscreteColorKeyFrame
+                                                                                            Value="LightGray"
+                                                                                            KeyTime="0:0:0.5"/>
+                                                                                            </ColorAnimationUsingKeyFrames>
+                                                                                        </Storyboard>
+                                                                                    </BeginStoryboard>
+                                                                                </MultiDataTrigger.EnterActions>
+                                                                                <MultiDataTrigger.ExitActions>
+                                                                                    <RemoveStoryboard BeginStoryboardName="ConfirmSwitchColor"/>
+                                                                                </MultiDataTrigger.ExitActions>
+                                                                            </MultiDataTrigger>
+
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition 
+                                                                            Binding="{Binding RelativeSource={RelativeSource Mode=Self}, 
+                                                                                        Path=IsMouseOver}" 
+                                                                            Value="True"/>
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <Setter Property="TextBlock.Foreground" Value="Black" />
+                                                                            </MultiDataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Status}" Value="Idle" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <Setter Property="TextBlock.Foreground" Value="Black" />
+                                                                            </MultiDataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Status}" Value="No Connection" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <!--red-->
+                                                                                <Setter Property="TextBlock.Foreground" Value="#591616" />
+                                                                            </MultiDataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Status}" Value="Pumping" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <!--green-->
+                                                                                <Setter Property="Background" Value="#1c3b24" />
+                                                                            </MultiDataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Status}" Value="Authorized" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <!--light green-->
+                                                                                <Setter Property="Background" Value="#176359" />
+                                                                            </MultiDataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Status}" Value="Calling" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <!--yellow-->
+                                                                                <Setter Property="Background" Value="#947900" />
+                                                                            </MultiDataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Status}" Value="Stopped" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <!--red-->
+                                                                                <Setter Property="Background" Value="#591616" />
+                                                                            </MultiDataTrigger>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding Status}" Value="Finished" />
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <!--blue-->
+                                                                                <Setter Property="Background" Value="#0d203d" />
+                                                                            </MultiDataTrigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </StackPanel.Style>
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </ToggleButton.Template>
+                                            </ToggleButton>
+
+                                            <!--pump menu-->
+                                            <Popup 
+                                        IsOpen="{Binding IsChecked, ElementName=PumpButton}" 
+                                        StaysOpen="False"
+                                        Placement="Bottom"
+                                        PlacementTarget="{Binding ElementName=PumpButton}"
+                                        Width="140"
+                                        >
+                                                <StackPanel>
+
+                                                    <!--Prepay-->
+                                                    <Button 
+                                                Visibility="{Binding Path=CanPrepay,
+                                                    Converter={StaticResource BoolToVis}}"
+                                                Height="50"
+                                                Command="{Binding Path=DataContext.PrepayCmd, 
+                                                    ElementName=PumpControl}"
+                                                CommandParameter="{Binding}">
+                                                        <TextBlock FontSize="20">
+                                                    Prepay
+                                                        </TextBlock>
+                                                    </Button>
+
+                                                    <!--Switch Prepay-->
+                                                    <Button 
+                                                Visibility="{Binding Path=CanSwitchPrepay,
+                                                    Converter={StaticResource BoolToVis}}"
+                                                Height="50"
+                                                Command="{Binding Path=DataContext.SwitchPrepayCmd, 
+                                                    ElementName=PumpControl}"
+                                                CommandParameter="{Binding}">
+                                                        <TextBlock FontSize="20">
+                                                    Switch Prepay
+                                                        </TextBlock>
+                                                    </Button>
+
+                                                    <!-- Cancel Prepay Switch -->
+                                                    <Button 
+                                                Visibility="{Binding Path=CanCancelPrepaySwitch,
+                                                    Converter={StaticResource BoolToVis}}"
+                                                Height="50"
+                                                Command="{Binding Path=DataContext.CancelPrepaySwitchCmd, 
+                                                    ElementName=PumpControl}"
+                                                CommandParameter="{Binding}">
+                                                        <TextBlock FontSize="20">
+                                                    Cancel Switch
+                                                        </TextBlock>
+                                                    </Button>
+
+                                                    <!-- Confirm Prepay Switch -->
+                                                    <Button 
+                                                Visibility="{Binding Path=CanConfirmPrepaySwitch,
+                                                    Converter={StaticResource BoolToVis}}"
+                                                Height="50"
+                                                Command="{Binding Path=DataContext.ConfirmPrepaySwitchCmd, 
+                                                    ElementName=PumpControl}"
+                                                CommandParameter="{Binding}">
+                                                        <TextBlock FontSize="20">
+                                                    Switch Here
+                                                        </TextBlock>
+                                                    </Button>
+
+                                                    <!--Delete Prepay-->
+                                                    <Button 
+                                                Visibility="{Binding Path=CanDeletePrepay,
+                                                    Converter={StaticResource BoolToVis}}"
+                                                Height="50"
+                                                Command="{Binding Path=DataContext.DeletePrepayCmd, 
+                                                    ElementName=PumpControl}"
+                                                CommandParameter="{Binding}">
+                                                        <TextBlock FontSize="20">
+                                                    Delete Prepay
+                                                        </TextBlock>
+                                                    </Button>
+
+                                                    <!--Authorize-->
+                                                    <Button 
+                                                Visibility="{Binding Path=CanAuthorize,
+                                                    Converter={StaticResource BoolToVis}}"
+                                                Height="50"
+                                                Command="{Binding Path=DataContext.AuthorizeCmd, 
+                                                    ElementName=PumpControl}"
+                                                CommandParameter="{Binding}">
+                                                        <TextBlock FontSize="20">
+                                                    Authorize
+                                                        </TextBlock>
+                                                    </Button>
+
+                                                    <!--Stop-->
+                                                    <Button 
+                                                Visibility="{Binding Path=CanStop,
+                                                    Converter={StaticResource BoolToVis}}"
+                                                Height="50"
+                                                Command="{Binding Path=DataContext.StopCmd, 
+                                                    ElementName=PumpControl}"
+                                                CommandParameter="{Binding}">
+                                                        <TextBlock FontSize="20">
+                                                    Stop
+                                                        </TextBlock>
+                                                    </Button>
+
+                                                    <!--start-->
+                                                    <Button 
+                                                Visibility="{Binding Path=CanStart,
+                                                    Converter={StaticResource BoolToVis}}"
+                                                Height="50"
+                                                Command="{Binding Path=DataContext.StartCmd, 
+                                                    ElementName=PumpControl}"
+                                                CommandParameter="{Binding}">
+                                                        <TextBlock FontSize="20">
+                                                    Start
+                                                        </TextBlock>
+                                                    </Button>
+                                                </StackPanel>
+                                            </Popup>
+
+                                            <!--baskets-->
+                                            <ItemsControl
+                                        ItemsSource="{Binding TwoBaskets}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel
+                                                    Height="90"
+                                                    Background="DarkSlateGray"
+                                                    />
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Button Command="{Binding Path=DataContext.BasketCmd,
+                                                    ElementName=PumpControl}"
+                                                    CommandParameter="{Binding}"
+                                                    Height="45">
+                                                            <TextBlock
+                                                        FontSize="15"
+                                                        Text="{Binding Amount,
+                                                                StringFormat=N2}"/>
+                                                        </Button>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+
+                </ScrollViewer>
+
+            </DockPanel>
+
+            <!--disconnected message-->
+            <DockPanel>
+                <DockPanel.Style>
+                    <Style 
+                        TargetType="DockPanel">
+                        <Setter 
+                            Property="Visibility" 
+                            Value="Collapsed"/>
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition 
+                                        Binding="{Binding IsFcsConnected}" 
+                                        Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter 
+                                    Property="Visibility" 
+                                    Value="Visible"/>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DockPanel.Style>
+
+                <controls:BilingualText VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Lang="{Binding Language}"
+                    TextResourceKey="FuelServerNotAvailable"/>
+            </DockPanel>
+
+        </DockPanel>
+    </Grid>
+</views:MvxWpfView>
